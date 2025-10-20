@@ -5,6 +5,9 @@ from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Исходя из класса, выбранного пользователем выбери какой нанести урон,
+    для каждого класса свой диапазон урона.
+    """
     if char_class == 'warrior':
         return (f'{char_name} нанёс урон противнику равный'
                 f'{5 + randint(3, 5)}')
@@ -18,6 +21,9 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Исходя из класса, выбранного пользователем выбери
+    сколько заблокироать урона, для каждого класса свой диапазон урона.
+    """
     if char_class == 'warrior':
         return (f'{char_name} блокировал {10 + randint(5, 10)} урона')
     elif char_class == 'mage':
@@ -28,6 +34,9 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Исходя из класса, выбранного пользователем выбери
+    какое специальное умение использовать, для каждого класса своё умение.
+    """
     if char_class == 'warrior':
         return (f'{char_name} применил специальное умение «Выносливость»'
                 f'{80 + 25}')
@@ -39,6 +48,10 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Исходя из выбранного пользователем класса, выведи сообщение о нём,
+    затем предложи потренироваться, на выбор 1 из 3 вариантов -
+    атака, защита, специальное умение.
+    """
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     elif char_class == 'mage':
@@ -63,6 +76,9 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Предложи пользователю выбрать 1 из 3 классов -
+    воитель, лекарь и маг
+    """
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
